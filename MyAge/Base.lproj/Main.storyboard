@@ -1,24 +1,93 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--My Age App-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MyAgeApp" customModule="MyAge" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Your Birth Of Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="feT-KJ-AW4">
+                                <rect key="frame" x="16" y="39" width="343" height="23"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="textColor" red="0.25147569611805076" green="0.16473924642497575" blue="0.70984455958549231" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="MGE-sv-uPn">
+                                <rect key="frame" x="16" y="100" width="343" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="543942064.10782599">
+                                    <!--2018-03-28 15:01:04 +0000-->
+                                </date>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GAR-PR-zyr">
+                                <rect key="frame" x="16" y="332" width="343" height="30"/>
+                                <state key="normal" title="Get My Age"/>
+                                <connections>
+                                    <action selector="buGetAge:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kRW-o9-XMJ"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Age IN Month" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LC3-cD-SOE">
+                                <rect key="frame" x="16" y="448" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Age In Days" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="54y-c5-mHT">
+                                <rect key="frame" x="16" y="518" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Age Is" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Xx-LZ-GHq">
+                                <rect key="frame" x="16" y="385" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="GAR-PR-zyr" firstAttribute="leading" secondItem="MGE-sv-uPn" secondAttribute="leading" id="0Mz-uE-mS5"/>
+                            <constraint firstItem="MGE-sv-uPn" firstAttribute="top" secondItem="feT-KJ-AW4" secondAttribute="bottom" constant="38" id="6in-7z-nMS"/>
+                            <constraint firstItem="LC3-cD-SOE" firstAttribute="top" secondItem="3Xx-LZ-GHq" secondAttribute="bottom" constant="42" id="BYi-aC-7SD"/>
+                            <constraint firstItem="MGE-sv-uPn" firstAttribute="leading" secondItem="feT-KJ-AW4" secondAttribute="leading" id="HZq-we-zfl"/>
+                            <constraint firstItem="GAR-PR-zyr" firstAttribute="trailing" secondItem="MGE-sv-uPn" secondAttribute="trailing" id="JCn-F2-bJT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="feT-KJ-AW4" secondAttribute="trailing" constant="16" id="QNu-Nu-5cv"/>
+                            <constraint firstItem="3Xx-LZ-GHq" firstAttribute="top" secondItem="GAR-PR-zyr" secondAttribute="bottom" constant="23" id="Qu6-JW-wmq"/>
+                            <constraint firstItem="feT-KJ-AW4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Sdv-eH-ZOI"/>
+                            <constraint firstItem="MGE-sv-uPn" firstAttribute="trailing" secondItem="feT-KJ-AW4" secondAttribute="trailing" id="T6s-bB-rUJ"/>
+                            <constraint firstItem="LC3-cD-SOE" firstAttribute="trailing" secondItem="3Xx-LZ-GHq" secondAttribute="trailing" id="Thz-7j-AzO"/>
+                            <constraint firstItem="3Xx-LZ-GHq" firstAttribute="leading" secondItem="GAR-PR-zyr" secondAttribute="leading" id="VoF-R7-IBe"/>
+                            <constraint firstItem="LC3-cD-SOE" firstAttribute="leading" secondItem="3Xx-LZ-GHq" secondAttribute="leading" id="dEk-AK-XmZ"/>
+                            <constraint firstItem="54y-c5-mHT" firstAttribute="leading" secondItem="LC3-cD-SOE" secondAttribute="leading" id="mo8-r8-pAo"/>
+                            <constraint firstItem="GAR-PR-zyr" firstAttribute="top" secondItem="MGE-sv-uPn" secondAttribute="bottom" constant="16" id="rEk-XA-IoV"/>
+                            <constraint firstItem="54y-c5-mHT" firstAttribute="top" secondItem="LC3-cD-SOE" secondAttribute="bottom" constant="49" id="sNA-jg-45V"/>
+                            <constraint firstItem="54y-c5-mHT" firstAttribute="trailing" secondItem="LC3-cD-SOE" secondAttribute="trailing" id="vKr-ff-xma"/>
+                            <constraint firstItem="3Xx-LZ-GHq" firstAttribute="trailing" secondItem="GAR-PR-zyr" secondAttribute="trailing" id="vtp-ks-cG7"/>
+                            <constraint firstItem="feT-KJ-AW4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="19" id="zN0-Ev-zxN"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="laDisplayAge" destination="3Xx-LZ-GHq" id="Xpo-bj-fhV"/>
+                        <outlet property="laDisplayDays" destination="54y-c5-mHT" id="cx6-YP-kwd"/>
+                        <outlet property="laDisplayMonth" destination="LC3-cD-SOE" id="Tlc-9c-NQB"/>
+                        <outlet property="myDatePicker" destination="MGE-sv-uPn" id="we6-Ur-eJy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-149.59999999999999" y="-54.422788605697157"/>
         </scene>
     </scenes>
 </document>
